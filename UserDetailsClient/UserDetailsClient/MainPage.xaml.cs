@@ -89,7 +89,7 @@ namespace UserDetailsClient
             s = s.Replace('-', '+').Replace('_', '/');
             s = s.PadRight(s.Length + (4 - s.Length % 4) % 4, '=');
             var byteArray = Convert.FromBase64String(s);
-            var decoded = Encoding.UTF8.GetString(byteArray, 0, byteArray.Count());
+            var decoded = Encoding.UTF8.GetString(byteArray, 0, byteArray.Length);
             return decoded;
         }
 
